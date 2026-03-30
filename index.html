@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>betterflyuu - Premium Links</title>
+    
+    <style>
+        /* 1. Latar Belakang Premium (Deep Dark Theme) */
+        body {
+            /* Warna Staylist Premium: Deep Cosmic/Teal/Ruby */
+            /* Kita pake 4 warna dasar yang super gelap tapi rich */
+            background-color: #030303; /* Dasar Hitam Pekat */
+            
+            /* Lapisan Animasi Pertama (Pulsing Colors) */
+            /* Ini UIGradient Premium yang warnanya "bernapas" pelan */
+            background: 
+                radial-gradient(at 10% 10%, #15012e 0px, transparent 50%),
+                radial-gradient(at 90% 90%, #00132e 0px, transparent 50%),
+                radial-gradient(at 50% 50%, #330022 0px, transparent 100%);
+            
+            color: white;
+            font-family: 'Courier New', Courier, monospace; /* Pake font ala hacker/code */
+            text-align: center;
+            padding-top: 50px;
+            margin: 0;
+            min-height: 100vh;
+            
+            /* Animasi 'bernapas' warna background */
+            animation: breatheBackground 15s ease-in-out infinite;
+        }
+
+        /* Ini Keyframes animasi background 'bernapas' */
+        @keyframes breatheBackground {
+            0%, 100% { background-color: #030303; }
+            50% { background-color: #0a011a; } /* Agak unguan dikit di tengah */
+        }
+
+        /* 2. Tempat Foto Profil (Lebih Glow) */
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            /* Pastikan nama file profil kamu di GitHub sama persis dengan di bawah ini! */
+            background-image: url('profil.jpg.jpeg'); 
+            background-size: cover; 
+            background-position: center; 
+            
+            border-radius: 50%; 
+            margin: 0 auto 15px auto;
+            border: 3px solid #00ffff; /* Warna Teal Terang */
+            
+            /* Efek Glow Premium (Milyaran Rupiah) */
+            box-shadow: 0 0 15px #00ffff, 
+                        0 0 30px #00ffff, 
+                        0 0 45px rgba(0, 255, 255, 0.5);
+            
+            animation: picPulse 3s infinite ease-in-out;
+        }
+
+        @keyframes picPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 15px #00ffff; }
+            50% { transform: scale(1.03); box-shadow: 0 0 30px #00ffff, 0 0 50px rgba(0, 255, 255, 0.7); }
+        }
+
+        /* 3. Efek Glitch pada Nama (SUPER KECE) */
+        .glitch {
+            position: relative;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase; /* Jadi huruf kapital semua */
+            letter-spacing: 3px;
+            color: white;
+            animation: glitchAnimation 1s linear infinite;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text); /* Mengambil teks asli */
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+        }
+
+        /* Bayangan Glitch Warna Merah */
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff0044;
+            clip: rect(44px, 450px, 56px, 0); /* Mengiris teks */
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+
+        /* Bayangan Glitch Warna Teal */
+        .glitch::after {
+            left: -2px;
+            text-shadow: 2px 0 #00ffff;
+            clip: rect(100px, 450px, 120px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(110px, 9999px, 13px, 0); }
+            5% { clip: rect(6px, 9999px, 88px, 0); }
+            /* ... (dipotong biar gak kepanjangan, ini sistem acak iris teks) ... */
+            100% { clip: rect(98px, 9999px, 7px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(8px, 9999px, 110px, 0); }
+            /* ... (sistem acak iris teks) ... */
+            100% { clip: rect(12px, 9999px, 30px, 0); }
+        }
+
+        /* 4. Desain Tombol Link Premium (Glassmorphism + RGB Effect) */
+        .link-button {
+            display: block; 
+            width: 80%;
+            max-width: 350px; 
+            margin: 15px auto; 
+            padding: 18px;
+            
+            /* Efek Kaca Premium (Glassmorphism) */
+            background-color: rgba(10, 10, 10, 0.6); 
+            backdrop-filter: blur(8px); 
+            
+            color: #00ffff; /* Warna teks tombol Cyan */
+            text-decoration: none; 
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            
+            /* INI UICORNER-NYA: Diubah jadi 20px biar melengkung halus */
+            border-radius: 20px; 
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden; /* Biar efek dalem tombol gak keluar */
+        }
+
+        /* Garis LED di bawah tombol (ala RGB Gaming) */
+        .link-button::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, #ff0044, #ff00ff, #00ffff, #ff0044);
+            background-size: 300% 100%;
+            animation: rgbLine 4s linear infinite;
+        }
+
+        @keyframes rgbLine {
+            0% { background-position: 100% 0%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Efek Hover Tombol (Premium Tech) */
+        .link-button:hover {
+            background-color: rgba(0, 255, 255, 0.1); /* Agak nerawangteal */
+            color: white;
+            border: 1px solid #00ffff;
+            box-shadow: 0 0 15px #00ffff;
+            transform: translateY(-3px) scale(1.02); /* Naik dikit + gede dikit */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-pic"></div>
+    
+    <h2 class="glitch" data-text="BETTERFLYUU">BETTERFLYUU</h2>
+    
+    <p>Story-driven Gaming Content Creator 🎮</p>
+
+    <a href="https://www.youtube.com/@betterflyu" target="_blank" class="link-button">YouTube Channel</a>
+    
+    <a href="https://discord.gg/FPxVYTH4N" target="_blank" class="link-button">discord</a>
+    
+    <a href="https://saweria.co/betterflyuu" target="_blank" class="link-button">Support via Saweria ☕</a>
+
+</body>
+</html>
